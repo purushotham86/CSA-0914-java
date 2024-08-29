@@ -1,0 +1,21 @@
+public class armstr {
+
+	public static void main(String[] args) {
+		int n=153;
+		int sum=0;
+		int r=1;
+		int i=0;
+		while(n!=0) {
+			r=n%10;
+			r=r*3;
+			n/=10;
+			sum+=i;
+			}
+if(n==sum) {
+		System.out.println("armstrong");
+}else {
+	System.out.println("Not");
+}
+	}
+
+}
