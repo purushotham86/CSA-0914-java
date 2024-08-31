@@ -1,0 +1,13 @@
+public class MtoN{
+    public static void main(String[] args){
+    int n=2342;
+    int prod=1;
+    while(n!=0){
+        int rem=n%10;
+        prod=prod*rem;
+        n/=10;
+    }
+    System.out.println(prod);
+    }
+     
+        }
