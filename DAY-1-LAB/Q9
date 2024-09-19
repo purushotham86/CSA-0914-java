@@ -1,0 +1,21 @@
+import java.util.Arrays;
+
+public class EqualizeArrays {
+
+    public static void main(String[] args) {
+        // Example arrays
+        int[] array1 = {1, 2, 3, 4};
+        int[] array2 = {5, 6};
+
+        // Find the smaller array length
+        int minLength = Math.min(array1.length, array2.length);
+
+        // Adjust the length of both arrays to be equal to the smaller one
+        array1 = Arrays.copyOf(array1, minLength);
+        array2 = Arrays.copyOf(array2, minLength);
+
+        // Print the new arrays
+        System.out.println("Array 1 after equalizing: " + Arrays.toString(array1));
+        System.out.println("Array 2 after equalizing: " + Arrays.toString(array2));
+    }
+}
