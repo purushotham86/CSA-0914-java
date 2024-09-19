@@ -1,0 +1,13 @@
+public class LogicGates {
+
+    public static void main(String[] args) {
+        int A = 1;
+        int B = 0;
+
+        int orGate = A | B;
+        int andGate = A & B;
+
+        System.out.println("OR Gate: " + orGate);
+        System.out.println("AND Gate: " + andGate);
+    }
+}
