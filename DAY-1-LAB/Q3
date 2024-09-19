@@ -1,0 +1,26 @@
+public class StringDemo {
+
+    public static void main(String[] args) {
+
+        String s1 = new String();
+        String s2 = new String("Hello");
+        char[] charArray = {'W', 'o', 'r', 'l', 'd'};
+        String s3 = new String(charArray);
+        byte[] byteArray = {65, 66, 67, 68};
+        String s4 = new String(byteArray);
+
+        System.out.println("s1: " + s1);
+        System.out.println("s2: " + s2);
+        System.out.println("s3: " + s3);
+        System.out.println("s4: " + s4);
+
+        System.out.println("Length of s2: " + s2.length());
+        System.out.println("Character at index 1 in s2: " + s2.charAt(1));
+        System.out.println("Substring of s2: " + s2.substring(1, 4));
+        System.out.println("s2 equals s3: " + s2.equals(s3));
+        System.out.println("s2 in uppercase: " + s2.toUpperCase());
+        System.out.println("Concatenation of s2 and s3: " + s2.concat(s3));
+        System.out.println("Index of 'e' in s2: " + s2.indexOf('e'));
+        System.out.println("s2 replaced 'l' with 'p': " + s2.replace('l', 'p'));
+    }
+}
