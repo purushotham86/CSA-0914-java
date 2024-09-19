@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+
+public class ArrayListOperations {
+
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("John");
+        list.add("Alice");
+        list.add("Bob");
+        list.add("Eve");
+
+        list.remove(1);
+
+        int position = list.indexOf("Bob");
+        System.out.println("Position of Bob: " + position);
+
+        for (String name : list) {
+            System.out.println(name);
+        }
+    }
+}
