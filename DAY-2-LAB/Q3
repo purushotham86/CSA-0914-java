@@ -1,0 +1,85 @@
+import java.util.Scanner;
+
+// Custom Exception for Negative Values
+class NegativeValueException extends Exception {
+    public NegativeValueException(String message) {
+        super(message);
+    }
+}
+
+// Custom Exception for Invalid Decimal Numbers
+class InvalidDecimalException extends Exception {
+    public InvalidDecimalException(String message) {
+        super(message);
+    }
+}
+
+// Custom Exception for Non-Integer Values
+class NonIntegerValueException extends Exception {
+    public NonIntegerValueException(String message) {
+        super(message);
+    }
+}
+
+public class CustomExceptionDemo {
+
+    // Method that throws custom exceptions
+    public static void processInput(int value) throws NegativeValueException {
+        if (value < 0) {
+            throw new NegativeValueException("Error: Negative value entered.");
+        }
+        System.out.println("Processed value: " + value);
+    }
+
+    public static void processDecimal(String decimalStr) throws InvalidDecimalException {
+        try {
+            Double.parseDouble(decimalStr); // Validate if it's a decimal number
+        } catch (NumberFormatException e) {
+            throw new InvalidDecimalException("Error: Invalid decimal number entered.");
+        }
+    }
+
+    public static void processInteger(String intStr) throws NonIntegerValueException {
+        try {
+            Integer.parseInt(intStr); // Validate if it's an integer
+        } catch (NumberFormatException e) {
+            throw new NonIntegerValueException("Error: Non-integer value entered.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Example 1: Handling Negative Value Exception
+        try {
+            System.out.print("Enter an integer: ");
+            int value = scanner.nextInt();
+            processInput(value);
+        } catch (NegativeValueException e) {
+            System.out.println(e.getMessage());
+        }
+
+        // Example 2: Handling Invalid Decimal Number Exception
+        scanner.nextLine(); // Consume newline left-over
+        System.out.print("Enter a decimal number: ");
+        String decimalStr = scanner.nextLine();
+        try {
+            processDecimal(decimalStr);
+            System.out.println("Valid decimal number: " + decimalStr);
+        } catch (InvalidDecimalException e) {
+            System.out.println(e.getMessage());
+        }
+
+        // Example 3: Handling Non-Integer Value Exception
+        System.out.print("Enter a number: ");
+        String intStr = scanner.nextLine();
+        try {
+            processInteger(intStr);
+            System.out.println("Valid integer value: " + intStr);
+        } catch (NonIntegerValueException e) {
+            System.out.println(e.getMessage());
+        }
+
+        scanner.close();
+    }
+}
