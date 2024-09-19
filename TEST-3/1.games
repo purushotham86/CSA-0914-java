@@ -1,0 +1,106 @@
+// Base class
+class Character {
+    protected String name;
+    protected int health;
+    protected int attackPower;
+
+    public Character(String name, int health, int attackPower) {
+        this.name = name;
+        this.health = health;
+        this.attackPower = attackPower;
+    }
+
+    public void attack(Character opponent) {
+        System.out.println(name + " attacks " + opponent.name + " for " + attackPower + " damage.");
+        opponent.health -= attackPower;
+    }
+
+    public void displayStats() {
+        System.out.println("Name: " + name);
+        System.out.println("Health: " + health);
+        System.out.println("Attack Power: " + attackPower);
+    }
+}
+
+// Derived class: Warrior
+class Warrior extends Character {
+    private int shieldStrength;
+
+    public Warrior(String name, int health, int attackPower, int shieldStrength) {
+        super(name, health, attackPower);
+        this.shieldStrength = shieldStrength;
+    }
+
+    @Override
+    public void attack(Character opponent) {
+        super.attack(opponent);
+        System.out.println(name + " uses a powerful strike!");
+    }
+
+    public void defend() {
+        System.out.println(name + " defends with shield strength of " + shieldStrength + ".");
+    }
+}
+
+// Derived class: Mage
+class Mage extends Character {
+    private int mana;
+
+    public Mage(String name, int health, int attackPower, int mana) {
+        super(name, health, attackPower);
+        this.mana = mana;
+    }
+
+    @Override
+    public void attack(Character opponent) {
+        super.attack(opponent);
+        System.out.println(name + " casts a spell!");
+    }
+
+    public void castSpell() {
+        System.out.println(name + " casts a spell with " + mana + " mana.");
+    }
+}
+
+// Derived class: Archer
+class Archer extends Character {
+    private int arrowCount;
+
+    public Archer(String name, int health, int attackPower, int arrowCount) {
+        super(name, health, attackPower);
+        this.arrowCount = arrowCount;
+    }
+
+    @Override
+    public void attack(Character opponent) {
+        super.attack(opponent);
+        System.out.println(name + " shoots an arrow!");
+    }
+
+    public void shootArrow() {
+        if (arrowCount > 0) {
+            System.out.println(name + " shoots an arrow. Arrows left: " + --arrowCount);
+        } else {
+            System.out.println(name + " has no arrows left!");
+        }
+    }
+}
+
+public class GameDemo {
+    public static void main(String[] args) {
+        Warrior warrior = new Warrior("Thor", 100, 20, 50);
+        Mage mage = new Mage("Gandalf", 80, 15, 100);
+        Archer archer = new Archer("Legolas", 90, 10, 30);
+
+        // Display stats
+        warrior.displayStats();
+        mage.displayStats();
+        archer.displayStats();
+
+        // Perform actions
+        warrior.attack(mage);
+        mage.castSpell();
+        archer.shootArrow();
+        warrior.defend();
+    }
+}
