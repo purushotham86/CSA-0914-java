@@ -1,0 +1,29 @@
+public class MethodOverloadingExample {
+
+   
+    public void display(int a) {
+        System.out.println("Method with one integer: " + a);
+    }
+
+    public void display(int a, int b) {
+        System.out.println("Method with two integers: " + a + ", " + b);
+    }
+    public void display(double a) {
+        System.out.println("Method with one double: " + a);
+    }
+
+    public void display(String a) {
+        System.out.println("Method with one string: " + a);
+    }
+
+   
+    public void display(int a, String b) {
+        System.out.println("Method with integer and string: " + a + ", " + b);
+    }
+
+    public static void main(String[] args) {
+        MethodOverloadingExample example = new MethodOverloadingExample();
+
+
+    }
+}
