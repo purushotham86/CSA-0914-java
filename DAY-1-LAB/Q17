@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class LuckGuess {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your guess (1-5): ");
+        int guess = scanner.nextInt();
+
+        switch (guess) {
+            case 1:
+                System.out.println("Bad luck!");
+                break;
+            case 2:
+                System.out.println("Better luck next time!");
+                break;
+            case 3:
+                System.out.println("Lucky!");
+                break;
+            case 4:
+                System.out.println("Very lucky!");
+                break;
+            case 5:
+                System.out.println("Jackpot!");
+                break;
+            default:
+                System.out.println("Invalid guess.");
+                break;
+        }
+    }
+}
