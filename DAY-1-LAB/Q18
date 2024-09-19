@@ -1,0 +1,21 @@
+public class ShortestPath {
+
+    public static void main(String[] args) {
+        int[] path1 = {1, 2, 3, 4, 5};
+        int[] path2 = {1, 2, 3};
+
+        int shortest = (path1.length < path2.length) ? 1 : 2;
+
+        switch (shortest) {
+            case 1:
+                System.out.println("Path1 is the shortest path first.");
+                break;
+            case 2:
+                System.out.println("Path2 is the shortest path first.");
+                break;
+            default:
+                System.out.println("Both paths are equal.");
+                break;
+        }
+    }
+}
