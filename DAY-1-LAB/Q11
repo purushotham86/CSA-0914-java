@@ -1,0 +1,20 @@
+public class AgeDifference {
+
+    public static void main(String[] args) {
+
+        int olderBrotherAgeNow = 28;
+        int youngerBrotherAgeNow = 24;
+
+        int ageDifference = olderBrotherAgeNow - youngerBrotherAgeNow;
+
+        int olderBrotherFutureAge = 56;
+        int personAgeWhenOlderBrotherIs56 = olderBrotherFutureAge - ageDifference;
+
+        System.out.println("Person's age when older brother is 56: " + personAgeWhenOlderBrotherIs56);
+
+        if (ageDifference > 3) {
+            int youngerBrotherAgeWhenOlderBrotherWas5 = 5 - ageDifference;
+            System.out.println("Younger brother's age when older brother was 5: " + youngerBrotherAgeWhenOlderBrotherWas5);
+        }
+    }
+}
