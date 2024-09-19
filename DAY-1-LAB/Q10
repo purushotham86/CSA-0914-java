@@ -1,0 +1,12 @@
+public class GreatestOfThree {
+
+    public static void main(String[] args) {
+        int a = 10, b = 20, c = 15;
+
+        // Using ternary operator to find the greatest number
+        int greatest = (a > b) ? (a > c ? a : c) : (b > c ? b : c);
+
+        // Print the greatest number
+        System.out.println("The greatest number is: " + greatest);
+    }
+}
