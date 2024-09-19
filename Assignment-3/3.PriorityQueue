@@ -1,0 +1,17 @@
+import java.util.PriorityQueue;
+
+public class PriorityQueueDemo {
+
+    public static void main(String[] args) {
+        PriorityQueue<String> employees = new PriorityQueue<>();
+        employees.add("Alice");
+        employees.add("John");
+        employees.add("Eve");
+
+        System.out.println("Removed highest priority: " + employees.poll());
+
+        for (String employee : employees) {
+            System.out.println(employee);
+        }
+    }
+}
