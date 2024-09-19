@@ -1,0 +1,20 @@
+import java.util.HashSet;
+
+public class HashSetOperations {
+
+    public static void main(String[] args) {
+        HashSet<String> names = new HashSet<>();
+        names.add("John");
+        names.add("Alice");
+        names.add("Bob");
+
+        names.remove("Alice");
+
+        boolean isPresent = names.contains("Bob");
+        System.out.println("Is Bob present: " + isPresent);
+
+        for (String name : names) {
+            System.out.println(name);
+        }
+    }
+}
