@@ -1,0 +1,44 @@
+import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.util.Scanner;
+
+public class NumberFormatExceptionDemo {
+
+    public static void main(String[] args) {
+        // Example a) Parsing a Non-Numeric String
+        try {
+            String nonNumericString = "abc";
+            int number = Integer.parseInt(nonNumericString); // This will cause NumberFormatException
+            System.out.println("Parsed number: " + number);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Parsing a non-numeric string.");
+        }
+
+        // Example b) Reading User Input Without Validation
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter a number: ");
+            String userInput = scanner.nextLine();
+            int number = Integer.parseInt(userInput); // This may cause NumberFormatException if input is not a valid number
+            System.out.println("You entered: " + number);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Reading user input without validation.");
+        }
+
+        // Example c) Formatting Issues in “Decimal Format”
+        try {
+            DecimalFormat df = new DecimalFormat("#.##");
+            String formattedNumber = "123.456";
+            Number number = df.parse(formattedNumber); // Correct parsing, but if pattern mismatch, it would throw ParseException
+            System.out.println("Formatted number: " + number);
+        } catch (ParseException e) {
+            System.out.println("Error: Formatting issues in Decimal Format.");
+        }
+
+        // Example d) Incorrectly Using Localized Decimal Separators
+        try {
+            DecimalFormat df = new DecimalFormat("#,###.##");
+            String localizedNumber = "1.234,56"; // Incorrect format for locale expecting comma as thousand separator
+            Number number = df.parse(localizedNumber); // This may cause NumberFormatException
+            System.out.println("Parsed number: " + number);
+        } catch (ParseException e) {
+            System.out.println("Error: 
