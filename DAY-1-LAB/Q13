@@ -1,0 +1,22 @@
+public class GreatestValue {
+
+    public static void main(String[] args) {
+        int loop1 = 15; // value from 12.00 PM to 01.00 PM
+        int loop2 = 22; // value from some other time
+        int loop3 = 18; // value from another time
+
+        if (loop1 > loop2) {
+            if (loop1 > loop3) {
+                System.out.println("Loop1 contains the greatest value: " + loop1);
+            } else {
+                System.out.println("Loop3 contains the greatest value: " + loop3);
+            }
+        } else {
+            if (loop2 > loop3) {
+                System.out.println("Loop2 contains the greatest value: " + loop2);
+            } else {
+                System.out.println("Loop3 contains the greatest value: " + loop3);
+            }
+        }
+    }
+}
