@@ -1,0 +1,34 @@
+public class DataTypeConversionDemo {
+
+    public static void main(String[] args) {
+        
+        byte byteVar = 100;
+        int intVar = byteVar;
+        long longVar = intVar;
+        double doubleVar = longVar;
+        
+        System.out.println("Implicit Conversion:");
+        System.out.println("Byte to Int: " + intVar);
+        System.out.println("Int to Long: " + longVar);
+        System.out.println("Long to Double: " + doubleVar);
+        
+       
+        double largeDouble = 100.99;
+        long narrowedLong = (long) largeDouble;
+        int narrowedInt = (int) narrowedLong;
+        byte narrowedByte = (byte) narrowedInt;
+        
+        System.out.println("\nExplicit Conversion:");
+        System.out.println("Double to Long: " + narrowedLong);
+        System.out.println("Long to Int: " + narrowedInt);
+        System.out.println("Int to Byte: " + narrowedByte);
+        
+    
+        byte overflowByte = (byte) 130;
+        byte underflowByte = (byte) -130; 
+        
+        System.out.println("\nOverflow and Underflow:");
+        System.out.println("Overflow (130 to Byte): " + overflowByte);
+        System.out.println("Underflow (-130 to Byte): " + underflowByte);
+    }
+}
