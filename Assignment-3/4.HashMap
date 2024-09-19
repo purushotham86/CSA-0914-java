@@ -1,0 +1,20 @@
+import java.util.HashMap;
+
+public class HashMapDemo {
+
+    public static void main(String[] args) {
+        HashMap<Integer, String> students = new HashMap<>();
+        students.put(101, "John");
+        students.put(102, "Alice");
+        students.put(103, "Bob");
+
+        String name = students.get(102);
+        System.out.println("Student with ID 102: " + name);
+
+        students.remove(103);
+
+        for (HashMap.Entry<Integer, String> entry : students.entrySet()) {
+            System.out.println("ID: " + entry.getKey() + ", Name: " + entry.getValue());
+        }
+    }
+}
