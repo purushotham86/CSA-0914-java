@@ -1,0 +1,43 @@
+public class ArithmeticExceptionDemo {
+
+    public static void main(String[] args) {
+        // Example a) Division by Zero
+        try {
+            int numerator = 10;
+            int denominator = 0;
+            int result = numerator / denominator; // This will cause ArithmeticException
+            System.out.println("Result of division: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero is not allowed.");
+        }
+
+        // Example b) Logarithm of Negative Number or Zero
+        try {
+            double value = -1;
+            double logResult = Math.log(value); // This will cause ArithmeticException for negative value
+            System.out.println("Logarithm of " + value + ": " + logResult);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Logarithm of a negative number is not allowed.");
+        }
+
+        // Example c) Tan 90 Degrees
+        try {
+            double angleInDegrees = 90;
+            double angleInRadians = Math.toRadians(angleInDegrees);
+            double tanResult = Math.tan(angleInRadians); // Tan of 90 degrees is undefined, causing an infinite value
+            System.out.println("Tan of " + angleInDegrees + " degrees: " + tanResult);
+        } catch (Exception e) {
+            System.out.println("Error: Tan of 90 degrees results in an undefined value.");
+        }
+
+        // Example d) Zero Power Zero
+        try {
+            double base = 0;
+            double exponent = 0;
+            double powerResult = Math.pow(base, exponent); // This results in 1.0 which is not an exception but could be a special case
+            System.out.println(base + " to the power of " + exponent + ": " + powerResult);
+        } catch (Exception e) {
+            System.out.println("Error: Zero raised to the power of zero is a special case.");
+        }
+    }
+}
