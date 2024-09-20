@@ -1,0 +1,37 @@
+abstract class MathOperations {
+    abstract void total();
+    abstract void average();
+    
+    public void mean() {
+        System.out.println("Calculating mean");
+    }
+    
+    public void mode() {
+        System.out.println("Calculating mode");
+    }
+    
+    public void median() {
+        System.out.println("Calculating median");
+    }
+}
+
+class Calculations extends MathOperations {
+    @Override
+    void total() {
+        System.out.println("Calculating total");
+    }
+
+    @Override
+    void average() {
+        System.out.println("Calculating average");
+    }
+    
+    public static void main(String[] args) {
+        Calculations calc = new Calculations();
+        calc.total();
+        calc.average();
+        calc.mean();
+        calc.mode();
+        calc.median();
+    }
+}
