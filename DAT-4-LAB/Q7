@@ -1,0 +1,35 @@
+interface Sum {
+    void sum();
+}
+
+interface Average {
+    void avg();
+}
+
+interface Percentage {
+    void percentage();
+}
+
+class Statistics implements Sum, Average, Percentage {
+    @Override
+    public void sum() {
+        System.out.println("Calculating sum");
+    }
+
+    @Override
+    public void avg() {
+        System.out.println("Calculating average");
+    }
+
+    @Override
+    public void percentage() {
+        System.out.println("Calculating percentage");
+    }
+
+    public static void main(String[] args) {
+        Statistics stats = new Statistics();
+        stats.sum();
+        stats.avg();
+        stats.percentage();
+    }
+}
