@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class KthSmallestElement {
+    public static <T extends Comparable<T>> T findKthSmallest(Set<T> set, int k) {
+        List<T> list = new ArrayList<>(set);
+        Collections.sort(list);
+        return list.get(k - 1);  // k-th smallest element
+    }
+
+    public static void main(String[] args) {
+        Set<Integer> set = new HashSet<>(Set.of(4, 3, 1, 2, 5));
+        System.out.println("K-th Smallest: " + findKthSmallest(set, 2));  // Output: 2
+    }
+}
