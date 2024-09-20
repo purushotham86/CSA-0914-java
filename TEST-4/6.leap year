@@ -1,0 +1,12 @@
+class LeapYear{
+public static void main(String[]args){
+int n=40;
+int sum=0;
+if(n%4==0){
+System.out.print("even");
+}
+else
+{
+System.out.print("not leap year");
+}
+}
