@@ -1,0 +1,22 @@
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class ElementOccurrences {
+    public static <T> Map<T, Integer> countOccurrences(List<T> list) {
+        Map<T, Integer> occurrences = new HashMap<>();
+        
+        for (T element : list) {
+            occurrences.put(element, occurrences.getOrDefault(element, 0) + 1);
+        }
+        
+        return occurrences;
+    }
+
+    public static void main(String[] args) {
+        List<Integer> numbers = List.of(1, 2, 2, 3, 3, 3, 4, 4, 4, 4);
+        Map<Integer, Integer> result = countOccurrences(numbers);
+        
+        System.out.println(result);  
+    }
+}
