@@ -1,0 +1,25 @@
+interface Tree {
+    void fruits();
+}
+
+class Branch1 implements Tree {
+    @Override
+    public void fruits() {
+        System.out.println("Branch1 fruits");
+    }
+}
+
+class Branch2 implements Tree {
+    @Override
+    public void fruits() {
+        System.out.println("Branch2 fruits");
+    }
+    
+    public static void main(String[] args) {
+        Branch1 b1 = new Branch1();
+        Branch2 b2 = new Branch2();
+        
+        b1.fruits();
+        b2.fruits();
+    }
+}
