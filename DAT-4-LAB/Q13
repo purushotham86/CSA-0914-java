@@ -1,0 +1,17 @@
+import java.util.Deque;
+import java.util.LinkedList;
+
+public class DequeOperations {
+    public static void main(String[] args) {
+        Deque<Integer> deque = new LinkedList<>();
+
+        // Push and pop from both ends
+        deque.addFirst(1);  // push to front
+        deque.addLast(2);   // push to back
+        System.out.println(deque);  // Output: [1, 2]
+
+        deque.removeFirst();  // pop from front
+        deque.removeLast();   // pop from back
+        System.out.println(deque);  // Output: []
+    }
+}
