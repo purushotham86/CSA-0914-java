@@ -1,0 +1,37 @@
+// Base class
+class Person {
+    String name;
+    int age;
+
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+// Derived class
+class Student extends Person {
+    char grade;
+
+    Student(String name, int age, char grade) {
+        super(name, age);
+        this.grade = grade;
+    }
+
+    void displayInfo() {
+        super.displayInfo();
+        System.out.println("Grade: " + grade);
+    }
+}
+
+// Main class
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Student student = new Student("Alice", 20, 'A');
+        student.displayInfo();
+    }
+}
