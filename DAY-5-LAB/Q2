@@ -1,0 +1,43 @@
+// Base class
+class Animal {
+    String name;
+
+    // Constructor
+    Animal(String name) {
+        this.name = name;
+    }
+
+    // Method to make sound
+    void makeSound() {
+        System.out.println(name + " makes a sound.");
+    }
+}
+
+// Derived class
+class Dog extends Animal {
+    
+    // Constructor
+    Dog(String name) {
+        super(name); // Call the constructor of the base class
+    }
+
+    // Overriding the makeSound() method
+    @Override
+    void makeSound() {
+        System.out.println(name + " barks.");
+    }
+}
+
+// Main class
+public class InheritanceExample {
+    public static void main(String[] args) {
+        // Creating an object of the base class
+        Animal myAnimal = new Animal("Generic Animal");
+        myAnimal.makeSound();
+
+        // Creating an object of the derived class
+        Dog myDog = new Dog("Buddy");
+        myDog.makeSound();
+    }
+}
+s
