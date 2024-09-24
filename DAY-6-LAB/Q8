@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class PowersOfNumber {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Input a number: ");
+        double number = input.nextDouble();
+        
+        System.out.printf("Square: %.2f%n", Math.pow(number, 2));
+        System.out.printf("Cube: %.2f%n", Math.pow(number, 3));
+        System.out.printf("Fourth power: %.2f%n", Math.pow(number, 4));
+    }
+}
