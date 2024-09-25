@@ -1,0 +1,18 @@
+import java.lang.annotation.*;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface MyCustomAnnotation {
+    String value();
+}
+
+class AnnotationExample {
+    @MyCustomAnnotation(value = "Hello")
+    public void myMethod() {
+    }
+
+    public static void main(String[] args) {
+        AnnotationExample example = new AnnotationExample();
+        System.out.println("Annotation added to myMethod");
+    }
+}
