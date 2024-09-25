@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class CollectionExample {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+
+        Set<String> set = new HashSet<>();
+        set.add("Apple");
+        set.add("Apple");
+
+        Map<String, Integer> map = new HashMap<>();
+        map.put("Apple", 1);
+        map.put("Banana", 2);
+
+        System.out.println(list);
+        System.out.println(set);
+        System.out.println(map);
+    }
+}
