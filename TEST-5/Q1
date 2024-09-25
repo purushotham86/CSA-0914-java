@@ -1,0 +1,25 @@
+import java.io.IOException;
+
+public class ExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int result = divide(10, 0);
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero: " + e.getMessage());
+        }
+
+        try {
+            readFile("nonexistent.txt");
+        } catch (IOException e) {
+            System.out.println("File not found: " + e.getMessage());
+        }
+    }
+
+    public static int divide(int a, int b) {
+        return a / b;
+    }
+
+    public static void readFile(String filename) throws IOException {
+        throw new IOException("File does not exist");
+    }
+}
